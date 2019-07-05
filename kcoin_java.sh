@@ -10,3 +10,5 @@ echo 'export JAVA_HOME=/usr/local/kcoin/jdk1.8.0_161' >>/etc/profile
 echo 'export JRE_HOME=/usr/local/kcoin/jdk1.8.0_161/jre' >>/etc/profile
 echo 'export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib' >>/etc/profile
 echo 'export PATH=$JAVA_HOME/bin:$PATH' >>/etc/profile
+
+source /etc/profile
