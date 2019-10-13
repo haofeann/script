@@ -64,6 +64,8 @@ function install_tomcat()
     echo "复制war包到项目"
     cp /data/${porject}.war $tomcat_dir/webapps/
     chown -R work:work $tomcat_dir
+    mkdir -p /data/logs/app/
+    chown -R work:work /data/logs/
 }
 
 function install_java()
