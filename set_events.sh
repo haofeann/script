@@ -62,7 +62,7 @@ function install_tomcat()
     echo "清理webapps"
     rm -rf $tomcat_dir/webapps/*
     echo "复制war包到项目"
-    #cp /data/${porject}.war $tomcat_dir/webapps/
+    cp /data/${porject}.war $tomcat_dir/webapps/
     chown -R work:work $tomcat_dir
 }
 
@@ -75,6 +75,7 @@ function install_java()
     echo -e "\n\n# java\nexport JAVA_HOME=${basedir}/jdk1.8.0_161/\nexport JRE_HOME=${basedir}/jdk1.8.0_161/jre" >> /etc/profile
     echo -e "export CLASSPATH=.:\$JAVA_HOME/lib/dt.jar:\$JAVA_HOME/lib/tools.jar:\$JRE_HOME/lib">> /etc/profile
     echo -e "export PATH=\$JAVA_HOME/bin:\$PATH">> /etc/profile
+    source /etc/profile
 }
 
 function check_tomcat_config()
