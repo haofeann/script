@@ -48,7 +48,6 @@ function check_tomcat()
         echo "项目已始安装"
 
     fi
-
 }
 
 function install_tomcat()
@@ -129,48 +128,73 @@ case $porject in
     "exchange-web-api")
         server_port=8111
         http_port=8160
-        ajp_port=8211;;
+        ajp_port=8211
+        check_java
+        check_tomcat;;
     "exchange-app-api")
         server_port=8115
         http_port=8164
-        ajp_port=8215;;
+        ajp_port=8215
+        check_java
+        check_tomcat;;
     "exchange-open-api")
         server_port=8109
         http_port=8158
-        ajp_port=8209;;
+        ajp_port=8209
+        check_java
+        check_tomcat;;
     "exchange-otc-api")
         server_port=8116
         http_port=8165
-        ajp_port=8216;;
+        ajp_port=8216
+        check_java
+        check_tomcat;;
     "finance")
         server_port=8108
         http_port=8157
-        ajp_port=8208;;
+        ajp_port=8208
+        check_java
+        check_tomcat;;
     "operate-web")
         server_port=8107
         http_port=8156
-        ajp_port=8207;;
+        ajp_port=8207
+        check_java
+        check_tomcat;;
     "otc-chat")
         server_port=8113
         http_port=8162
-        ajp_port=8213;;
+        ajp_port=8213
+        check_java
+        check_tomcat;;
     "otc-job")
         server_port=8114
         http_port=8163
-        ajp_port=8214;;
+        ajp_port=8214
+        check_java
+        check_tomcat;;
     "schedule-web")
         server_port=8105
         http_port=8154
-        ajp_port=8205;;
+        ajp_port=8205
+        check_java
+        check_tomcat;;
     "stats-job")
         server_port=8106
         http_port=8155
-        ajp_port=8206;;
+        ajp_port=8206
+        check_java
+        check_tomcat;;
     "exchange-otc-app-api")
         server_port=8110
         http_port=8159
-        ajp_port=8212;;
-    *) echo "项目包名错误" ; exit 2; ;;
+        ajp_port=8212
+        check_java
+        check_tomcat;;
+    "jdk-18161")
+        check_java;;
+    "tomcat")
+        check_tomcat;;
+    *) echo "项目包名错误" ; 
+        exit 2; ;;
 esac
-check_java
-check_tomcat
