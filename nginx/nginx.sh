@@ -64,6 +64,7 @@ make  && make install
 
 echo "# nginx" >> /etc/profile
 echo "export PATH=\$PATH:/usr/local/applications/nginx/sbin" >> /etc/profile
+source /etc/profile
 cd ..
 rm -rf nginx-1.22.1  nginx-1.22.1.tar.gz  openssl-3.2.0.tar.gz  pcre-8.45.tar.gz zlib-1.3.1.tar.gz 
 
